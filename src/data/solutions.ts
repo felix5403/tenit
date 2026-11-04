@@ -127,9 +127,11 @@ export const solutions: Solution[] = [
     ],
     accent: "#0F766E",
     accentSoft: "#EDF7F6",
-    url: null,
+    url: "https://btspdf.com",
     externalLabel: "BTSPDF 바로가기",
-    seoDescription: "BTSPDF는 PDF를 문서로, 문서를 PDF로 변환하는 서비스입니다.",
+    seoDescription:
+      "BTSPDF는 PDF·이미지·오피스 파일 변환, PDF 압축, 페이지 정리를 웹에서 간단하게 처리하는 서비스입니다. 한국어와 영어를 지원합니다.",
+    customPage: true,
   },
 ];
 
