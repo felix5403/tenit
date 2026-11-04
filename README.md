@@ -21,7 +21,8 @@ npm run build && npm run start
 | --- | --- | --- |
 | HOME | `/` | Hero · About · 솔루션/서비스/바우처 요약 · 협업 CTA |
 | SOLUTION | `/solutions` | 솔루션 4종 소개 (헤더 드롭다운) |
-| └ | `/solutions/tenit-cloud` | 솔루션 상세 (공통 템플릿) |
+| └ | `/solutions/tenit-cloud` | Tenit Cloud 전용 페이지 (tenit.cloud 기반) |
+| └ | `/solutions/[slug]` | 공통 템플릿 (새 솔루션 추가 시 사용, 전용 페이지가 있는 솔루션은 제외) |
 | └ | `/solutions/btspdf` | BTSPDF 전용 페이지 |
 | └ | `/solutions/beshop-ai` | 비숍 전용 페이지 (beshop.ai 기반) |
 | └ | `/solutions/blackguard` | 블랙가드 전용 페이지 (소개서 기반) |
@@ -41,6 +42,7 @@ npm run build && npm run start
 | `src/data/blackguard.ts` | 블랙가드 페이지 문구·프로세스·수집 채널·요금 (`pricing.show`로 요금 표시 여부) |
 | `src/data/beshop.ts` | 비숍 페이지 문구·기능·요금·FAQ (`pricing.show`로 요금 표시 여부) |
 | `src/data/btspdf.ts` | BTSPDF 페이지 문구·작업·특징 |
+| `src/data/tenitcloud.ts` | Tenit Cloud 페이지 문구·기능·AI 연동·요금 (`pricing.show`로 요금 표시 여부) |
 | `src/data/services.ts` | SERVICE 페이지 서비스 영역 |
 | `src/data/vouchers.ts` | 바우처 사업 목록, 수요기업 예시, 안내 문구 |
 | `src/data/navigation.ts` | 헤더 메뉴 (사이트맵) |

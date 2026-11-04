@@ -52,10 +52,11 @@ export const solutions: Solution[] = [
     ],
     accent: "#0B5FCC",
     accentSoft: "#EEF4FD",
-    url: null,
-    externalLabel: "Tenit Cloud 바로가기",
+    url: "https://tenit.cloud/landing.html",
+    externalLabel: "Tenit Cloud 시작하기",
     seoDescription:
-      "Tenit Cloud(테닛클라우드)는 AI 기반의 차세대 CAT 툴로, 번역 업무를 더 효율적으로 수행할 수 있는 작업 환경을 제공합니다.",
+      "Tenit Cloud(테닛클라우드)는 번역 메모리, 용어집, AI 번역·검수, 자막 현지화, 프로젝트 관리를 하나로 묶은 한국 시장 맞춤 AI 기반 CAT 플랫폼입니다.",
+    customPage: true,
   },
   {
     slug: "beshop-ai",
