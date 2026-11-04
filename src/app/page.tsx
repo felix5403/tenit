@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Arrow, ButtonLink } from "@/components/Button";
 import { Container, Eyebrow } from "@/components/Container";
 import { MoreLink, PartnershipCta, SectionTitle } from "@/components/Sections";
-import { HeroVisual } from "@/components/visuals/HeroVisual";
 import { getVisibleServiceAreas } from "@/data/services";
 import { solutions } from "@/data/solutions";
 import { vouchers, voucherNotice } from "@/data/vouchers";
@@ -19,30 +18,26 @@ export default function HomePage() {
     <>
       {/* ── Hero ── */}
       <section aria-labelledby="hero-title" className="border-b border-line">
-        <Container className="grid gap-14 pt-14 pb-16 sm:pt-20 lg:grid-cols-12 lg:gap-10 lg:pt-24 lg:pb-28">
-          <div className="lg:col-span-6 lg:pt-6">
-            <Eyebrow className="text-cobalt">AI-Powered Business Development Studio</Eyebrow>
-            <h1
-              id="hero-title"
-              className="mt-6 text-[40px] leading-[1.15] font-bold tracking-[-0.035em] sm:text-[56px] lg:text-[64px]"
-            >
-              <span className="block">아이디어를 사업으로.</span>
-              <span className="block text-cobalt">AI로 더 빠르게.</span>
-            </h1>
-            <p className="mt-7 max-w-[30em] text-[17px] leading-[1.75] text-ink-soft sm:text-[18px]">
+        <Container className="pt-16 pb-16 sm:pt-24 sm:pb-20 lg:pt-32 lg:pb-24">
+          <Eyebrow className="text-cobalt">AI-Powered Business Development Studio</Eyebrow>
+          <h1
+            id="hero-title"
+            className="mt-7 max-w-[11em] text-[44px] leading-[1.15] font-bold tracking-[-0.04em] sm:text-[68px] lg:text-[88px]"
+          >
+            <span className="text-cobalt">AI</span>로 새로운 사업을 만듭니다.
+          </h1>
+          <div className="mt-14 grid gap-10 border-t border-line pt-10 sm:mt-20 lg:grid-cols-12 lg:items-end">
+            <p className="text-[17px] leading-[1.75] text-ink-soft sm:text-[19px] lg:col-span-7">
               테닛은 시장의 문제를 발견하고, AI로 해결하며,{" "}
               <br className="hidden sm:block" />
               지속 가능한 사업으로 발전시키는 사업개발 전문 스튜디오입니다.
             </p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-3 sm:flex-row lg:col-span-5 lg:justify-end">
               <ButtonLink href="/solutions">솔루션 살펴보기</ButtonLink>
               <ButtonLink href="/contact" variant="secondary">
                 협업 문의하기
               </ButtonLink>
             </div>
-          </div>
-          <div className="lg:col-span-6 lg:pl-6">
-            <HeroVisual />
           </div>
         </Container>
       </section>
