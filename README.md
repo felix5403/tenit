@@ -21,7 +21,8 @@ npm run build && npm run start
 | --- | --- | --- |
 | HOME | `/` | Hero · About · 솔루션/서비스/바우처 요약 · 협업 CTA |
 | SOLUTION | `/solutions` | 솔루션 4종 소개 (헤더 드롭다운) |
-| └ | `/solutions/tenit-cloud` · `beshop-ai` · `btspdf` | 솔루션 상세 (공통 템플릿) |
+| └ | `/solutions/tenit-cloud` · `btspdf` | 솔루션 상세 (공통 템플릿) |
+| └ | `/solutions/beshop-ai` | 비숍 전용 페이지 (beshop.ai 기반) |
 | └ | `/solutions/blackguard` | 블랙가드 전용 페이지 (소개서 기반) |
 | SERVICE | `/service` | 서비스 영역 (현지화·디자인·개발·마케팅·품질 검수) |
 | VOUCHER | `/voucher` | 공급기업 참여 정부 지원사업 |
@@ -37,6 +38,7 @@ npm run build && npm run start
 | `src/data/company.ts` | 회사 정보. **빈 값은 화면에 표시되지 않음** |
 | `src/data/solutions.ts` | 제품명, 헤드라인, 설명, 필요한 상황, 포인트 색, 서비스 URL, 문의 유형 |
 | `src/data/blackguard.ts` | 블랙가드 페이지 문구·프로세스·수집 채널·요금 (`pricing.show`로 요금 표시 여부) |
+| `src/data/beshop.ts` | 비숍 페이지 문구·기능·요금·FAQ (`pricing.show`로 요금 표시 여부) |
 | `src/data/services.ts` | SERVICE 페이지 서비스 영역 |
 | `src/data/vouchers.ts` | 바우처 사업 목록, 수요기업 예시, 안내 문구 |
 | `src/data/navigation.ts` | 헤더 메뉴 (사이트맵) |

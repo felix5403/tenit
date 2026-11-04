@@ -74,10 +74,11 @@ export const solutions: Solution[] = [
     ],
     accent: "#6D28D9",
     accentSoft: "#F4EFFD",
-    url: null,
-    externalLabel: "BeShop AI 바로가기",
+    url: "https://www.beshop.ai",
+    externalLabel: "비숍 AI 시작하기",
     seoDescription:
-      "BeShop AI(비숍)는 AI로 상품 상세페이지를 간편하게 제작하는 서비스입니다.",
+      "비숍(BeShop AI)은 상품 사진만 올리면 기획·문구·디자인을 한 번에 처리해 스마트스토어·쿠팡용 상세페이지를 만들어 주는 AI 서비스입니다.",
+    customPage: true,
   },
   {
     slug: "blackguard",
