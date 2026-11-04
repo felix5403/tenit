@@ -129,6 +129,12 @@ export const solutions: Solution[] = [
     accentSoft: "#EDF7F6",
     url: "https://btspdf.com",
     externalLabel: "BTSPDF 바로가기",
+    screenshot: {
+      src: "/images/btspdf-main.jpg",
+      width: 997,
+      height: 858,
+      alt: "BTSPDF 웹사이트 메인 화면. PDF 압축, 합치기, 나누기, 이미지→PDF, 편집, 서명 등 자주 찾는 도구 목록",
+    },
     seoDescription:
       "BTSPDF는 PDF·이미지·오피스 파일 변환, PDF 압축, 페이지 정리를 웹에서 간단하게 처리하는 서비스입니다. 한국어와 영어를 지원합니다.",
     customPage: true,

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Arrow } from "@/components/Button";
 import { Container, Eyebrow } from "@/components/Container";
 import { OtherSolutions } from "@/components/OtherSolutions";
-import { ProductVisual } from "@/components/visuals/ProductVisuals";
 import { btspdf as c } from "@/data/btspdf";
 import { getSolution } from "@/data/solutions";
 
@@ -95,7 +95,7 @@ export default function BtspdfPage() {
       {/* ── 주요 작업 ── */}
       <section aria-labelledby="bt-tools">
         <Container className="grid gap-12 py-20 sm:py-28 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-5">
             <Eyebrow>Tools</Eyebrow>
             <h2 id="bt-tools" className="mt-5 text-[30px] leading-[1.3] font-bold tracking-[-0.03em] sm:text-[40px]">
               {c.tools.title}
@@ -109,10 +109,21 @@ export default function BtspdfPage() {
               ))}
             </ul>
           </div>
-          <div className="min-w-0 lg:col-span-5 lg:col-start-8 lg:pt-24">
-            <ProductVisual slug="btspdf" />
-            <p className="mt-3 text-[13px] text-muted">이해를 돕기 위한 서비스 콘셉트 예시입니다.</p>
-          </div>
+          {sol.screenshot && (
+            <figure className="min-w-0 lg:col-span-7 lg:col-start-6 lg:pt-24">
+              <div className="overflow-hidden border border-line shadow-[0_12px_32px_rgba(21,23,28,0.06)]">
+                <Image
+                  src={sol.screenshot.src}
+                  width={sol.screenshot.width}
+                  height={sol.screenshot.height}
+                  alt={sol.screenshot.alt}
+                  sizes="(min-width: 1024px) 680px, 100vw"
+                  className="h-auto w-full"
+                />
+              </div>
+              <figcaption className="mt-3 text-[13px] text-muted">BTSPDF 메인 화면</figcaption>
+            </figure>
+          )}
         </Container>
       </section>
 
