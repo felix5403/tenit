@@ -27,6 +27,10 @@ export type Solution = {
   /** 외부 서비스 버튼 문구 (url이 있을 때만 사용) */
   externalLabel: string;
   seoDescription: string;
+  /** true면 공통 템플릿 대신 전용 페이지(src/app/solutions/<slug>/page.tsx)를 사용 */
+  customPage?: boolean;
+  /** 실제 서비스 화면 (있으면 솔루션 목록에서 콘셉트 비주얼 대신 표시) */
+  screenshot?: { src: string; width: number; height: number; alt: string };
 };
 
 export const solutions: Solution[] = [
@@ -90,12 +94,20 @@ export const solutions: Solution[] = [
       "평판 관리 업무를 체계적으로 운영하고 싶을 때",
       "제품 출시나 캠페인 이후 고객의 목소리를 살펴보고 싶을 때",
     ],
-    accent: "#C81E1E",
-    accentSoft: "#FDF1F1",
-    url: null,
-    externalLabel: "Blackguard 바로가기",
+    // 브랜드 그린 (흰 배경 대비 5.4:1)
+    accent: "#087A3F",
+    accentSoft: "#EEF8F2",
+    url: "https://blackguard.co.kr",
+    externalLabel: "블랙가드 사이트 바로가기",
     seoDescription:
-      "Blackguard(블랙가드)는 AI 기반의 온라인 여론 및 평판 관리 서비스입니다.",
+      "블랙가드(Blackguard)는 악플과 선플을 함께 수집·분석해 개인·기업·브랜드의 온라인 평판을 관리하는 AI 기반 통합 평판 관리 서비스입니다.",
+    customPage: true,
+    screenshot: {
+      src: "/images/blackguard/trend.jpg",
+      width: 1127,
+      height: 942,
+      alt: "블랙가드 대시보드의 일별 댓글 추이와 감정분석 추이 그래프 화면",
+    },
   },
   {
     slug: "btspdf",

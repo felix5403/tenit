@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Arrow } from "@/components/Button";
 import { Container } from "@/components/Container";
@@ -21,7 +22,7 @@ export default function SolutionsPage() {
       <PageHero
         eyebrow="Solution"
         title="더 나은 업무와 비즈니스를 만드는 솔루션"
-        description="테닛이 직접 기획하고 만드는 네 가지 자체 솔루션입니다. 아래 화면은 이해를 돕기 위한 서비스 콘셉트 예시입니다."
+        description="테닛이 직접 기획하고 만드는 네 가지 자체 솔루션입니다. 콘셉트 표시가 있는 화면은 이해를 돕기 위한 예시입니다."
       />
 
       <Container className="pb-20 sm:pb-28">
@@ -51,7 +52,23 @@ export default function SolutionsPage() {
                     </Link>
                   </div>
                   <div className={`lg:col-span-7 ${reverse ? "lg:order-1 lg:col-start-1 lg:row-start-1" : "lg:col-start-6"}`}>
-                    <ProductVisual slug={s.slug} />
+                    {s.screenshot ? (
+                      <figure>
+                        <div className="overflow-hidden border border-line bg-[#1b1d22]">
+                          <Image
+                            src={s.screenshot.src}
+                            width={s.screenshot.width}
+                            height={s.screenshot.height}
+                            alt={s.screenshot.alt}
+                            sizes="(min-width: 1024px) 700px, 100vw"
+                            className="h-auto w-full"
+                          />
+                        </div>
+                        <figcaption className="mt-3 text-[13px] text-muted">{s.name} 서비스 화면</figcaption>
+                      </figure>
+                    ) : (
+                      <ProductVisual slug={s.slug} />
+                    )}
                   </div>
                 </article>
               </li>

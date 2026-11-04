@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Arrow, ButtonLink } from "@/components/Button";
 import { Container } from "@/components/Container";
+import { OtherSolutions } from "@/components/OtherSolutions";
 import { ProductVisual } from "@/components/visuals/ProductVisuals";
 import { getSolution, solutions } from "@/data/solutions";
 
@@ -11,7 +12,8 @@ type Params = { slug: string };
 export const dynamicParams = false;
 
 export function generateStaticParams(): Params[] {
-  return solutions.map((s) => ({ slug: s.slug }));
+  // 전용 페이지가 있는 솔루션은 제외
+  return solutions.filter((s) => !s.customPage).map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
@@ -30,9 +32,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 export default async function SolutionPage({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const s = getSolution(slug);
-  if (!s) notFound();
+  if (!s || s.customPage) notFound();
 
-  const others = solutions.filter((o) => o.slug !== s.slug);
   const contactHref = `/contact?solution=${s.slug}`;
 
   return (
@@ -154,27 +155,7 @@ export default async function SolutionPage({ params }: { params: Promise<Params>
       </section>
 
       {/* 6. 다른 솔루션 */}
-      <nav aria-labelledby="others-title" className="border-t border-line bg-paper">
-        <Container className="py-16 sm:py-20">
-          <h2 id="others-title" className="text-[13px] font-semibold tracking-[0.08em] text-muted uppercase">
-            다른 솔루션
-          </h2>
-          <ul className="mt-6 grid border-t border-line md:grid-cols-3">
-            {others.map((o, i) => (
-              <li key={o.slug} className={`border-b border-line md:border-b-0 ${i > 0 ? "md:border-l" : ""}`}>
-                <Link href={`/solutions/${o.slug}`} className="group block py-7 md:px-6 md:first:pl-0">
-                  <span className="block h-[3px] w-6" style={{ background: o.accent }} aria-hidden="true" />
-                  <span className="mt-4 flex items-center justify-between gap-3 text-[20px] font-bold">
-                    {o.name}
-                    <Arrow className="transition-transform group-hover:translate-x-1" />
-                  </span>
-                  <span className="mt-2 block text-[15px] text-ink-soft">{o.headline}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </nav>
+      <OtherSolutions current={s.slug} />
     </article>
   );
 }
